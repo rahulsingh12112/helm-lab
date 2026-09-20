@@ -6,7 +6,11 @@ metadata:
 spec:
   project: default
   source:
+<<<<<<< HEAD
     repoURL: https://github.com/rahulsingh12112/argocd-lab1.git
+=======
+    repoURL: https://github.com/rahulsingh12112/helm-lab
+>>>>>>> 7b54378 (add app-of-apps parent + app manifests)
     targetRevision: main
     path: .
   destination:
@@ -14,4 +18,11 @@ spec:
     namespace: demo
   syncPolicy:
     syncOptions:
+<<<<<<< HEAD
       - CreateNamespace=true
+=======
+     - CreateNamespace=true
+    automated:
+      prune:  true
+      selfHeal: true
+>>>>>>> 7b54378 (add app-of-apps parent + app manifests)

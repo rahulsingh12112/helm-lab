@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: parent-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/rahulsingh12112/helm-lab.git
+    targetRevision: main
+    path: apps            # <-- yahi jaadu: path apps/ folder pe
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd     # child Application objects argocd ns me bante hain
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
