@@ -1,4 +1,3 @@
-cat > ~/HELM/ARGO/lab1/charts/helm-lab/appset/hello-appset.yaml << 'EOF'
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
@@ -33,4 +32,3 @@ spec:
           selfHeal: true
         syncOptions:
           - CreateNamespace=true
-EOF
