@@ -1,5 +1,5 @@
-replicaCount: 1
+replicaCount: 2
 image:
   repository: nginx
   tag: "1.25"
-message: "hello from argocd v1"
+message: "hello from argocd v2"
