@@ -1,3 +1,4 @@
+cat > ~/HELM/ARGO/lab1/charts/helm-lab/appset/hello-appset.yaml << 'EOF'
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
@@ -20,6 +21,9 @@ spec:
         repoURL: https://github.com/rahulsingh12112/helm-lab.git
         targetRevision: main
         path: .
+        helm:
+          valueFiles:
+            - 'envs/{{env}}/values.yaml'
       destination:
         server: https://kubernetes.default.svc
         namespace: 'appset-{{env}}'
@@ -29,3 +33,4 @@ spec:
           selfHeal: true
         syncOptions:
           - CreateNamespace=true
+EOF
